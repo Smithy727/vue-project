@@ -122,7 +122,8 @@
   }
   
   .header-container {
-    background-image: url();
+    background:url('../assets/comic_book_background.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
