@@ -1,9 +1,10 @@
 <template>
+
  <HeaderComponent/>
-  <HomeComponent />
+ 
+  <router-view/>
+  
   <FooterComponent />
-  
-  
 </template>
 
 <script>
@@ -22,6 +23,7 @@ export default {
     HeaderComponent,
     HomeComponent,
     FooterComponent,
+
 
     
   

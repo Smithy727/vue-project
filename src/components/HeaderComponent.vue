@@ -3,9 +3,9 @@
     
     <nav>
       <ul class="nav_links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="#">About</a></li>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/about">Gallery</router-link></li>
+        
       </ul>
     </nav>
   </header>
@@ -27,7 +27,6 @@
     
     <!-- Add "scoped" attribute to limit CSS to this component only -->
     <style scoped>
-
 
 
   

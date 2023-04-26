@@ -1,6 +1,6 @@
-<!-- <template>
+<template>
     <div class="app-container">
-    <img src="src\assets\A scary forest.jpg" alt="Image description">
+    <img src="../assets/Pikachu.jpg" alt="Image description">
     <div id="canvasContainer"></div>
     <div id="menu">
     </div>
@@ -44,15 +44,15 @@
     
     <script>
     export default {
-      name: 'Panel1',
+      name: 'Panel4',
       props: {
         msg: String
       }
     }
     </script>
     
-     Add "scoped" attribute to limit CSS to this component only -->
-     <!--
+     Add "scoped" attribute to limit CSS to this component only 
+   
     <style scoped>
 .app-container {
     display: flex;
@@ -104,4 +104,4 @@
     background-color: #da531a;
   }
     
-    </style> -->
+    </style>
