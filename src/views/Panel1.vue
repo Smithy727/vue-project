@@ -40,6 +40,7 @@
 
 
   </div>
+ 
     </template>
     
     <script>
@@ -47,8 +48,27 @@
       name: 'Panel1',
       props: {
         msg: String
-      }
+      },
+      setup() {
+  const sketchScript = document.createElement("script");
+  sketchScript.setAttribute(
+    "src",
+    "sketch.js"
+  );
+  document.head.appendChild(sketchScript);
+},
+setup() {
+  const p5Script = document.createElement("script");
+  p5Script.setAttribute(
+    "src",
+    "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"
+  );
+  document.head.appendChild(p5Script);
+}
     }
+    
+    
+    
     </script>
     
      Add "scoped" attribute to limit CSS to this component only 
@@ -105,3 +125,4 @@
   }
     
     </style>
+    

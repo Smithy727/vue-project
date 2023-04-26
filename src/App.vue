@@ -1,10 +1,9 @@
 <template>
 
  <HeaderComponent/>
- 
   <router-view/>
-  
   <FooterComponent />
+  
 </template>
 
 <script>
@@ -22,10 +21,7 @@ export default {
   components: {
     HeaderComponent,
     HomeComponent,
-    FooterComponent,
-
-
-    
+    FooterComponent
   
   }
   
