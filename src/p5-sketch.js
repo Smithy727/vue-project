@@ -1,3 +1,5 @@
+export default function sketch(p) {
+
 let mainCanvas;
 let canvases;
 let currentCanvas;
@@ -6,59 +8,59 @@ let brushSizeSlider;
 let brushStyleDropdown;
 let clearButton;
 let panalButtons;
+let saveButton;
 
-function setup() {
-  mainCanvas = createCanvas(800, 800);
+p.setup = function () {
+  mainCanvas = p.createCanvas(800, 800);
   mainCanvas.parent("canvasContainer");
-  background(255);
+  p.background(255);
 
   canvases = [
-    createGraphics(800, 800),
-    createGraphics(800, 800),
-    createGraphics(800, 800),
+    p.createGraphics(800, 800),
+    p.createGraphics(800, 800),
+    p.createGraphics(800, 800),
   ];
   currentCanvas = 0;
   canvases.forEach((canvas) => {
     canvas.background(255);
   });
 
-  colorWheel = createColorPicker("#000000");
-  brushSizeSlider = createSlider(1, 50, 10);
+  colorWheel = p.createColorPicker("#000000");
+  brushSizeSlider = p.createSlider(1, 50, 10);
   brushSizeSlider.style("width", "150px");
   
-
-  brushStyleDropdown = createSelect();
+  brushStyleDropdown = p.createSelect();
   brushStyleDropdown.option("normal");
   brushStyleDropdown.option("watercolor");
 
-  clearButton = createButton("Clear");
+  clearButton = p.createButton("Clear");
   clearButton.mousePressed(clearCanvas);
 
-  saveButton = createButton("Save");
+  saveButton = p.createButton("Save");
   saveButton.mousePressed(saveCanvas);
 
   panalButtons = [];
   for (let i = 0; i < 3; i++) {
-    const button = createButton(`Panal ${i + 1}`);
+    const button = p.createButton(`Panal ${i + 1}`);
     button.mousePressed(() => switchCanvas(i));
     panalButtons.push(button);
   }
 
-  const menu = select("#menu");
+  const menu = p.select("#menu");
   menu.child(colorWheel);
   menu.child(brushSizeSlider);
   menu.child(brushStyleDropdown);
   menu.child(clearButton);
   menu.child(saveButton);
   panalButtons.forEach((button) => menu.child(button));
-}
+};
 
-function draw() {
-  background(255);
-  image(canvases[currentCanvas], 0, 0);
+p.draw = function () {
+  p.background(255);
+  p.image(canvases[currentCanvas], 0, 0);
 
-  if (mouseIsPressed) {
-    if (mouseButton === LEFT) {
+  if (p.mouseIsPressed) {
+    if (p.mouseButton === p.LEFT) {
       const brushStyle = brushStyleDropdown.value();
       if (brushStyle === "normal") {
         drawNormalBrush(canvases[currentCanvas]);
@@ -67,12 +69,12 @@ function draw() {
       }
     }
   }
-}
+};
 
 function drawNormalBrush(canvas) {
   canvas.stroke(colorWheel.color());
   canvas.strokeWeight(brushSizeSlider.value());
-  canvas.line(pmouseX, pmouseY, mouseX, mouseY);
+  canvas.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
 }
 
 function drawWatercolorBrush(canvas) {
@@ -83,19 +85,20 @@ function drawWatercolorBrush(canvas) {
 
   for (let i = 0; i < numLayers; i++) {
     const layerSize = brushSize * (1 + layerSpread * (i / numLayers));
-    const layerAlpha = map(i, 0, numLayers - 1, 255, 0);
-    const layerColor = color(
-      red(baseColor),
-      green(baseColor),
-      blue(baseColor),
+    const layerAlpha = p.map(i, 0, numLayers - 1, 255, 0);
+    const layerColor = p.color(
+      p.red(baseColor),
+      p.green(baseColor),
+      p.blue(baseColor),
       layerAlpha
     );
 
     canvas.stroke(layerColor);
     canvas.strokeWeight(layerSize);
-    canvas.line(pmouseX, pmouseY, mouseX, mouseY);
+    canvas.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
   }
 }
+
 
 function clearCanvas() {
   canvases[currentCanvas].background(255);
@@ -109,4 +112,5 @@ function saveCanvas() {
   const savedCanvas = mainCanvas.canvas.toDataURL("image/png");
   savedImages.push({ src: savedCanvas });
   
+}
 }
