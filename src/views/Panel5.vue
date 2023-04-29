@@ -1,7 +1,7 @@
 <template>
     <div class="app-container">
     <img src="../assets/StickMan.jpg" alt="Image description">
-    <div id="canvasContainer" :ref="setCanvasContainerRef"></div>
+    <div id="canvasContainer"></div>
     <div id="menu">
     </div>
     
@@ -40,83 +40,68 @@
 
 
   </div>
-  
     </template>
     
     <script>
-    import p5 from 'p5';
-    import sketch from '@/p5-sketch';
-    
     export default {
       name: 'Panel5',
-      data() {
-        return {
-          p5Instance: null,
-          canvasContainer: null
-        };
-      },
-      mounted() {
-        this.p5Instance = new p5(sketch, this.canvasContainer);
-      },
-      beforeUnmount() {
-        if (this.p5Instance) {
-          this.p5Instance.remove();
-        }
-      },
-      methods: {
-        setCanvasContainerRef(el) {
-          this.canvasContainer = el;
-        }
+      props: {
+        msg: String
       }
-    };
+    }
     </script>
     
-    
+     Add "scoped" attribute to limit CSS to this component only 
+   
     <style scoped>
-    .app-container {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 20px;
-        margin-right: 20px;
-        margin-left: 20px;
-      }
-      .app-container img {
-        width: 400px;
-        height: auto;
-        margin-right: 20px;
-        margin-top: 60px;
-        border: 4px solid rgb(224, 51, 16);
-      }
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Change this line */
+    gap: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
     
-      #menu {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        flex-direction: column;
-        min-height: 30vh;
-        border: 3px solid rgb(224, 51, 16);
-        padding: 10px;
-        padding-right: 25px;
-        margin-top: 60px;
-        margin-right: 20px;
-        margin-left: 20px;
-      }
+  }
+  .app-container img {
+    width: 400px; /* Set the width of the image */
+    height: auto;
+    margin-right: 20px; /* Add margin to the right to separate from the canvas container */
+    margin-top: 60px;
+    border: 4px solid rgb(224, 51, 16);
+  }
+  
+  #menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: column;
+    min-height: 30vh;
+    border: 3px solid rgb(224, 51, 16); /* Add border around the menu */
+    padding: 10px; /* Add padding inside the menu */
+    padding-right: 25px;
+    margin-top: 60px; /* Add margin to align with the top of the canvas */
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  
+  
+  #canvasContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid rgb(224, 51, 16);
+    width: fit-content;
+    height: fit-content;
+    padding: 1px;
+    box-sizing: content-box;
+    margin-top: 60px;
+  }
+  
+  
+  .canvas-button:hover {
+    background-color: #da531a;
+  }
     
-      #canvasContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 10px solid rgb(224, 51, 16);
-        width: fit-content;
-        height: fit-content;
-        padding: 1px;
-        box-sizing: content-box;
-        margin-top: 60px;
-      }
-    
-      .canvas-button:hover {
-        background-color: #da531a;
-      }
     </style>
-    
