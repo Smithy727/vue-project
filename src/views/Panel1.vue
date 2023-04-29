@@ -3,8 +3,9 @@
     <img src="../assets/AScaryForest.jpg" alt="Image description">
     <div>
       <div id="canvasContainer" :ref="setCanvasContainerRef"></div>
-      <div id="menu"></div>
+      
     </div>
+    <div id="menu"></div>
   </div>
   <div class="image-grid">
     <!-- ... -->
@@ -25,16 +26,12 @@ export default {
     };
   },
   mounted() {
+    this.canvasContainer = this.$refs.canvasContainer;
     this.p5Instance = new p5(sketch, this.canvasContainer);
   },
   beforeUnmount() {
     if (this.p5Instance) {
       this.p5Instance.remove();
-    }
-  },
-  methods: {
-    setCanvasContainerRef(el) {
-      this.canvasContainer = el;
     }
   }
 };
