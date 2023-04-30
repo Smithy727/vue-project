@@ -186,7 +186,17 @@
     margin-left: 20px;
   }
   
-  
+  :root{
+    --primary: #5ad8b2;
+    --seconday: #555;
+    --error: #ff4a4a; 
+  }
+  .App{
+    max-width: 1080px;
+    margin: 0 auto;
+    background: white;
+    padding : 20px;
+  }
   
   #canvasContainer {
     display: flex;

@@ -7,24 +7,39 @@
     </div>
     <div id="menu"></div>
   </div>
-  <div class="image-grid">
-    <!-- ... -->
+  <div>
+    <UploadForm/>
+    <PanelGrid/>
+    
   </div>
+  
+  
 </template>
 
 
 <script>
 import p5 from 'p5';
 import sketch from '@/p5-sketch';
+import UploadForm from '@/components/UploadForm.vue';
+import PanelGrid from '@/components/PanelGrid.vue';
+
+
+
+
 
 export default {
+  components: { UploadForm, PanelGrid },
+  
   name: 'Panel1',
-  data() {
+    setup() {
+    const setCanvasContainerRef = () => {
+      // Your function implementation
+    };
     return {
-      p5Instance: null,
-      canvasContainer: null
+      setCanvasContainerRef
     };
   },
+  
   mounted() {
     this.canvasContainer = this.$refs.canvasContainer;
     this.p5Instance = new p5(sketch, this.canvasContainer);
@@ -39,6 +54,7 @@ export default {
 
 
 <style scoped>
+
 .app-container {
     display: flex;
     justify-content: center;

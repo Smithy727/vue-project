@@ -9,6 +9,7 @@ import Panel5 from '../views/Panel5.vue'
 import Panel6 from '../views/Panel6.vue'
 
 
+
 const routes = [
     {
         path: '/',
@@ -19,10 +20,7 @@ const routes = [
         path: '/Gallery',
         name: 'Gallery',
         component: Gallery
-        //route level code-splitting
-        //this generates a seperate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        // component: ( )=> import(/* webpackChunkName: "about" */ '../views/About.vue')
+     
     }
     ,
     {
@@ -60,7 +58,7 @@ const routes = [
         name:  'Panel6',
         component: Panel6
     }
-    ,
+   
 ]
 
 const router = createRouter({

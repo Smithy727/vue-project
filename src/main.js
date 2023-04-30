@@ -3,4 +3,12 @@ import App from './App.vue'
 import './assets/global.css'
 import router from './router'
 
-createApp(App).use(router).mount('#app')
+import { projectFirestore } from './Firebase/config.js'
+
+const app = createApp(App)
+
+app.use(router)
+
+app.config.globalProperties.$firestore = projectFirestore
+
+app.mount('#app')

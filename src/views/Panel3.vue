@@ -19,10 +19,12 @@ import sketch from '@/p5-sketch';
 
 export default {
   name: 'Panel3',
-  data() {
+  setup() {
+    const setCanvasContainerRef = () => {
+      // Your function implementation
+    };
     return {
-      p5Instance: null,
-      canvasContainer: null
+      setCanvasContainerRef
     };
   },
   mounted() {

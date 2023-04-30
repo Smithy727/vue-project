@@ -2,6 +2,8 @@
 
  <HeaderComponent/>
   <router-view/>
+  
+ 
   <FooterComponent />
   
 </template>
@@ -10,6 +12,8 @@
 // const imgUrl = import ("src\assets\A scary forest.jpg");
 import HeaderComponent from './components/HeaderComponent.vue'
 import HomeComponent from './components/HomeComponent.vue'
+import PanelGrid from './components/PanelGrid.vue'
+import UploadForm from './components/UploadForm.vue'
 
 import FooterComponent from './components/FooterComponent.vue'
 
@@ -21,7 +25,10 @@ export default {
   components: {
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    PanelGrid,
+    UploadForm
+   
   
   }
   
