@@ -4,9 +4,10 @@
     padding: 5;
   }
   li, a, button {
-    font-family:"Roboto", sans-serif;
+    font-family: 'Comic Neue', cursive;
+
     font-weight: 500;
-    font-size: 16px;
+    font-size: 26px;
     color: #f5f5f5;
     text-decoration: none;
   }
@@ -16,14 +17,29 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
+    font-family: 'Comic Neue', cursive;
+  
   }
   
   nav {
     order: 1;
-    border: 3px solid rgb(224, 51, 16); /* Add a border at the bottom of the nav bar */
-    border-width: 3px;
+    border: 13px solid var(--borders); /* Add a border at the bottom of the nav bar */
+    border-width: 10px;
+    background-color: #242222d9;
+    font-family: 'Comic Neue', cursive;
+
   }
-  
+   .text {
+    background-color: #242222d9;
+    border: #261C69;
+   }
+   .title{
+    font-size:xx-large;
+    stroke: #282828;
+    font-family: 'Comic Neue', cursive;
+    font-family: 'Fira Sans', sans-serif;
+    
+   }
   .nav_links {
     list-style: none;
   }
@@ -38,7 +54,7 @@
     transition: all 0.3s ease 0s;
   }
   .nav_links li a:hover {
-      color: #faa200;
+      color: #FFC542 ;
   }
   
   button {
@@ -59,7 +75,8 @@
     padding: 10px 25px;
     background-color: #faa200;
     color: #f5f5f5;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Comic Neue', cursive;
+    font-family: 'Fira Sans', sans-serif;
     font-weight: 500;
     font-size: 16px;
     text-decoration: none;
@@ -81,6 +98,7 @@
     justify-items: center;
     align-items: center;
     margin-bottom: 50px;
+    
   }
   
   
@@ -88,17 +106,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
     margin: 10px;
+    border: 20px solid var(--borders); /* Add a border around each individual image */
   }
+  .image-container :hover {
+   
+    border: 5px solid var(--primary); /* Add a border around each individual image */
+  }
+  
   
   
   .image-container img {
     max-width: 100%; 
-    border: 4px solid rgb(224, 51, 16); /* Add a border around each individual image */
     display: block;
     object-fit: contain; 
   }
+
   
   
   .image-box {
@@ -120,9 +143,10 @@
   .canvas-button:hover {
     background-color: #da531a;
   }
+
   
   .header-container {
-    background:url('../assets/comic_book_background.jpg');
+    background:url('../assets/HeaderBackground.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -133,6 +157,9 @@
     padding: 100px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
     margin-bottom: 50px;
+    stroke: #282828;
+    
+    border: 15px solid var(--borders);
   }
   .header-container h1 {
     margin: 0;
@@ -144,14 +171,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:#282828;
+    background-color:#da531a;
     color: #f5f5f5;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Comic Neue', cursive;
+    font-family: 'Fira Sans', sans-serif;
+    background:url('../assets/BodyBackground.jpg');
+    background-size: cover;
+    background-position: center;
   }
   
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Comic Neue', cursive;
+  font-family: 'Fira Sans', sans-serif;
   }
   /* Canvas  */
   
@@ -169,7 +201,7 @@
     height: auto;
     margin-right: 20px; /* Add margin to the right to separate from the canvas container */
     margin-top: 60px;
-    border: 4px solid rgb(224, 51, 16);
+    border: 10px solid var(--borders);
   }
   
   #menu {
@@ -178,7 +210,7 @@
     gap: 10px;
     flex-direction: column;
     min-height: 30vh;
-    border: 3px solid rgb(224, 51, 16); /* Add border around the menu */
+    border: 3px solid var(--borders); /* Add border around the menu */
     padding: 10px; /* Add padding inside the menu */
     padding-right: 25px;
     margin-top: 60px; /* Add margin to align with the top of the canvas */
@@ -187,8 +219,9 @@
   }
   
   :root{
-    --primary: #5ad8b2;
-    --seconday: #555;
+    --primary: #da531a;
+    --seconday: #fcbf06;
+    --borders: #261C69;
     --error: #ff4a4a; 
   }
   .App{
@@ -202,7 +235,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 10px solid rgb(224, 51, 16);
+    border: 10px solid, var(--borders);
     width: fit-content;
     height: fit-content;
     padding: 1px;
@@ -212,14 +245,18 @@
   /* Canvas End */
   footer {
     margin-top: 160px;
-    background-color: #d3d3d3;
+    background-color: var(--borders);
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  
+  #content {
+    overflow: auto;
+    height: 100%
+  }
+
   
     
     

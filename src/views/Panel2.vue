@@ -54,7 +54,7 @@ export default {
     height: auto;
     margin-right: 20px;
     margin-top: 60px;
-    border: 4px solid rgb(224, 51, 16);
+    border: 10px solid var(--borders);
   }
 
   #menu {
@@ -63,7 +63,8 @@ export default {
     gap: 10px;
     flex-direction: column;
     min-height: 30vh;
-    border: 3px solid rgb(224, 51, 16);
+    border: 10px solid var(--borders);
+    background-color: #212120;
     padding: 10px;
     padding-right: 25px;
     margin-top: 60px;
@@ -75,7 +76,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 10px solid rgb(224, 51, 16);
+    border: 10px solid var(--borders);
     width: fit-content;
     height: fit-content;
     padding: 1px;

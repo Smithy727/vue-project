@@ -7,7 +7,7 @@ export default function sketch(p) {
   let brushSizeSlider;
   let brushStyleDropdown;
   let clearButton;
-  let panalButtons;
+  let panelButtons;
   let saveButton;
   
   p.setup = function () {
@@ -39,11 +39,11 @@ export default function sketch(p) {
     saveButton = p.createButton("Save");
     saveButton.mousePressed(saveCanvas);
   
-    panalButtons = [];
+    panelButtons = [];
     for (let i = 0; i < 3; i++) {
-      const button = p.createButton(`Panal ${i + 1}`);
+      const button = p.createButton(`Panel ${i + 1}`);
       button.mousePressed(() => switchCanvas(i));
-      panalButtons.push(button);
+      panelButtons.push(button);
     }
   
     const menu = p.select("#menu");
@@ -52,7 +52,7 @@ export default function sketch(p) {
     menu.child(brushStyleDropdown);
     menu.child(clearButton);
     menu.child(saveButton);
-    panalButtons.forEach((button) => menu.child(button));
+    panelButtons.forEach((button) => menu.child(button));
   };
   
   p.draw = function () {

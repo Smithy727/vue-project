@@ -1,5 +1,10 @@
 <template>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fira+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+
+  
  <HeaderComponent/>
   <router-view/>
   
@@ -16,6 +21,7 @@ import PanelGrid from './components/PanelGrid.vue'
 import UploadForm from './components/UploadForm.vue'
 
 import FooterComponent from './components/FooterComponent.vue'
+import Background from './components/Background.vue'
 
 
 
@@ -27,7 +33,8 @@ export default {
     HomeComponent,
     FooterComponent,
     PanelGrid,
-    UploadForm
+    UploadForm,
+    Background
    
   
   }
@@ -41,10 +48,15 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:#282828;
+  background-color:da531a;
   color: #f5f5f5;
   font-family: 'Roboto', sans-serif;
+  
 }
+
+
+
+
 
 
 </style>

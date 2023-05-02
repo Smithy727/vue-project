@@ -1,8 +1,9 @@
 <template>
   <div>
  
-  
+  <div class="text">
   <h3 class="center">Click on an image to start drawing your 3 panels</h3>
+</div>
  <br>
   <div class="image-grid">
     <div class="image-container">
@@ -60,5 +61,12 @@
   margin: auto;
   width: 40%;
 }
+.text {
+    background-color: #261C69;
+    border: 5px solid #261C69;
+    
+    
+    
+   }
   </style>
   
